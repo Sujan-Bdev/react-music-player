@@ -1,5 +1,50 @@
-.sidebar{
-    height: 100vh;
-    background-color: $secondary;
-    border: 1px solid orange;
+.sidebar {
+  height: auto;
+  background-color: $secondary;
+  // background-color: black;
+  border: 1px solid orange;
+
+  .logo {
+    width: 8rem;
+    height: 64px;
+    margin: 0 auto;
+  }
+
+  // .menu {
+  //     display: flex;
+  //     flex-direction: column;
+  // }
+}
+
+// OVER-RIDE
+
+.ant-layout-sider-trigger {
+  background-color: $gray-dark;
+}
+
+.ant-menu {
+  background-color: $secondary;
+}
+
+.ant-menu-item-active {
+  background-color: transparent;
+}
+
+.ant-menu-item-group-title {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color:transparent; 
+}
+.ant-layout-sider-collapsed {
+  .logo {
+    width: 6rem;
+  }
+
+  .ant-menu-item-group-title {
+    //   margin: 0 auto;
+    text-align: center;
+  font-size:1.1rem ;
+}
 }
