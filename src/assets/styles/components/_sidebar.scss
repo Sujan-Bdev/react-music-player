@@ -1,8 +1,14 @@
 .sidebar {
-  height: auto;
+  // height: auto;
   background-color: $secondary;
   // background-color: black;
   border: 1px solid orange;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  // position: sticky;
+  position: fixed;
+  height: 100vh;
 
   .logo {
     width: 8rem;
@@ -10,10 +16,19 @@
     margin: 0 auto;
   }
 
-  // .menu {
-  //     display: flex;
-  //     flex-direction: column;
-  // }
+  .toggle-menu {
+    width: 2rem;
+    margin: 0 auto;
+    cursor: pointer;
+    color: $black;
+    & > * {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
 // OVER-RIDE
@@ -35,7 +50,7 @@
   font-weight: 500;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color:transparent; 
+  background-color: transparent;
 }
 .ant-layout-sider-collapsed {
   .logo {
@@ -45,6 +60,6 @@
   .ant-menu-item-group-title {
     //   margin: 0 auto;
     text-align: center;
-  font-size:1.1rem ;
-}
+    font-size: 1.1rem;
+  }
 }

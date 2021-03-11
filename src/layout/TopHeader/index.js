@@ -51,15 +51,13 @@ const Index = () => {
           <IoNotifications className="icon" />
           <AiFillSetting className="icon" />
           <div className="user-nav">
-            <Space>
-              <Avatar
-                size="small"
-                shape = "square"
-                style={{ backgroundColor: "#87d068" }}
-                icon={<AiOutlineUser />}
-              />
-              <span className="user-nav__name">Richard Dunson</span>
-            </Space>
+            <Avatar
+              size="small"
+              shape="square"
+              style={{ backgroundColor: "#87d068" }}
+              icon={<AiOutlineUser />}
+            />
+            <span className="user-nav__name">Richard</span>
           </div>
         </Space>
       </nav>

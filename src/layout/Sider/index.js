@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Button } from "antd";
 import logo from "assets/img/Logo/logo.svg";
 import {
   AiOutlineReload,
   AiFillPlayCircle,
   AiFillHeart,
   AiFillFolder,
+  AiOutlineMenuFold,
+  AiOutlineMenuUnfold,
 } from "react-icons/ai";
 import { MdVolumeUp, MdAddCircle } from "react-icons/md";
 import { FaMicrophone, FaMusic } from "react-icons/fa";
@@ -100,20 +102,26 @@ const Index = () => {
   //     },
   //   ]);
 
-  const handleCollapse = (collapsed) => {
-    setCollapsed(collapsed);
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
   };
   return (
     <Sider
       className="sidebar"
       collapsible
       collapsed={collapsed}
-      onCollapse={handleCollapse}
+      trigger={null}
+      // onCollapse={handleCollapse}
     >
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
 
+      <div onClick={toggleCollapsed} className="toggle-menu">
+        {React.createElement(
+          collapsed ? AiOutlineMenuUnfold : AiOutlineMenuFold
+        )}
+      </div>
       <Menu defaultSelectedKeys={["1"]} mode="inline" className="menu">
         <ItemGroup title="Menu">
           <Item key="1" icon={<AiFillPlayCircle />}>
