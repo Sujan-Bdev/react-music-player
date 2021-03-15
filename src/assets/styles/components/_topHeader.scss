@@ -1,6 +1,10 @@
+.main{
+  margin-left: 200px;
+  transition: all 0.2s ease;
+}
+
 .top-header {
-  border: 1px solid orchid;
-  display: inline-block;
+  // width: calc(100%-200px);
 
   display: flex;
   justify-content: space-around;

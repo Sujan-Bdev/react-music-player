@@ -7,12 +7,12 @@ import TopHeader from "layout/TopHeader";
 
 const App = () => {
   return (
-    <Layout >
+    <Layout>
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <SideBar />
-          <Layout>
-          <TopHeader/>
+          <Layout className="main">
+            <TopHeader />
             <RouterApp />
           </Layout>
         </Router>

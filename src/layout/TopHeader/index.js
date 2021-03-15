@@ -23,10 +23,10 @@ const Index = () => {
   return (
     <Header className="top-header">
       {/* <div className="container"> */}
-      <nav class="nav__menu">
+      <nav className="nav__menu">
         <Space size="large">
-          <NavLink exact to="/menu" activeClassName="active">
-            Menu
+          <NavLink exact to="/" activeClassName="active">
+            Music
           </NavLink>
           <NavLink to="/podcast" activeClassName="active">
             Podcast

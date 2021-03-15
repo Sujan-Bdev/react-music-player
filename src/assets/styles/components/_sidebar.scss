@@ -1,12 +1,8 @@
 .sidebar {
-  // height: auto;
   background-color: $secondary;
-  // background-color: black;
-  border: 1px solid orange;
 
   overflow-y: auto;
   overflow-x: hidden;
-  // position: sticky;
   position: fixed;
   height: 100vh;
 
@@ -53,8 +49,14 @@
   background-color: transparent;
 }
 .ant-layout-sider-collapsed {
+  transition: all 0.2s ease;
+
   .logo {
     width: 6rem;
+  }
+
+  & + .main {
+    margin-left: 80px;
   }
 
   .ant-menu-item-group-title {

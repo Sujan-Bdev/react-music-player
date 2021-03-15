@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Layout, Menu, Button } from "antd";
+import * as path from "router/path";
 import logo from "assets/img/Logo/logo.svg";
 import {
   AiOutlineReload,
@@ -19,100 +21,12 @@ const { ItemGroup, Item } = Menu;
 
 const Index = () => {
   const [collapsed, setCollapsed] = useState(false);
-  //   const [sideMenu] = useState([
-  //     {
-  //       title: "Menu",
-  //       subMenu: [
-  //         {
-  //           id: "1",
-  //           subTitle: "Explore",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "2",
-  //           subTitle: "Genres",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "3",
-  //           subTitle: "Albums",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "4",
-  //           subTitle: "Artists",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "5",
-  //           subTitle: "Radio",
-  //           icon: "",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "Library",
-  //       subMenu: [
-  //         {
-  //           id: "1",
-  //           subTitle: "Recent",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "2",
-  //           subTitle: "Albums",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "3",
-  //           subTitle: "Favourites",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "4",
-  //           subTitle: "Local",
-  //           icon: "",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "PLAYLIST",
-  //       subMenu: [
-  //         {
-  //           id: "1",
-  //           subTitle: "Create New",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "2",
-  //           subTitle: "Design Flow",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "3",
-  //           subTitle: "Best of 2020",
-  //           icon: "",
-  //         },
-  //         {
-  //           id: "4",
-  //           subTitle: "Nigeria Jams",
-  //           icon: "",
-  //         },
-  //       ],
-  //     },
-  //   ]);
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
   return (
-    <Sider
-      className="sidebar"
-      collapsible
-      collapsed={collapsed}
-      trigger={null}
-      // onCollapse={handleCollapse}
-    >
+    <Sider className="sidebar" collapsible collapsed={collapsed} trigger={null}>
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
@@ -125,34 +39,52 @@ const Index = () => {
       <Menu defaultSelectedKeys={["1"]} mode="inline" className="menu">
         <ItemGroup title="Menu">
           <Item key="1" icon={<AiFillPlayCircle />}>
-            Explore
+            <NavLink to={path.HOME} exact activeClassName="active">
+              Explore
+            </NavLink>
           </Item>
           <Item key="2" icon={<MdVolumeUp />}>
-            Genres
+            <NavLink to={path.GENRES} activeClassName="active">
+              Genres
+            </NavLink>
           </Item>
           <Item key="3" icon={<BiAlbum />}>
-            Albums
+            <NavLink to={path.ALBUMS} activeClassName="active">
+              Albums
+            </NavLink>
           </Item>
           <Item key="4" icon={<FaMicrophone />}>
-            Artists
+            <NavLink to={path.ARTISTS} activeClassName="active">
+              Artists
+            </NavLink>
           </Item>
           <Item key="5" icon={<BiRadio />}>
-            Radio
+            <NavLink to={path.RADIO} activeClassName="active">
+              Radio
+            </NavLink>
           </Item>
         </ItemGroup>
 
         <ItemGroup title="Library">
           <Item key="6" icon={<AiOutlineReload />}>
-            Recent
+            <NavLink to={path.RECENT} activeClassName="active">
+              Recent
+            </NavLink>
           </Item>
           <Item key="7" icon={<FaMusic />}>
-            Albums
+            <NavLink to={path.ALBUMS} activeClassName="active">
+              Albums
+            </NavLink>
           </Item>
           <Item key="8" icon={<AiFillHeart />}>
-            Favourites
+            <NavLink to={path.FAVOURITES} activeClassName="active">
+              Favourites
+            </NavLink>
           </Item>
           <Item key="9" icon={<AiFillFolder />}>
-            Local
+            <NavLink to={path.LOCAL} activeClassName="active">
+              Local
+            </NavLink>
           </Item>
         </ItemGroup>
 
