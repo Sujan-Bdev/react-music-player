@@ -9,8 +9,8 @@ const TrendingHits = () => {
     effect: "fade",
     dots: true,
     arrows: true,
-    nextArrow: <AiOutlineDown  fill = "black"/>,
-    prevArrow: <AiOutlineUp  fill = "black" />,
+    nextArrow: <AiOutlineDown fill="#445668" />,
+    prevArrow: <AiOutlineUp fill="#445668" />,
   };
   return (
     <div className="container">
@@ -21,11 +21,16 @@ const TrendingHits = () => {
             <h1 className="trending-song__title">The Havana</h1>
             <h3 className="trending-song__artist">Camila Cabello</h3>
             <Space>
-              <Button type="primary" shape="round">
+              <Button type="primary" shape="round" size="large" className = "btn">
                 {" "}
                 Listen Now{" "}
               </Button>
-              <Button shape="circle" icon={<AiFillHeart />} />
+              <Button
+                className="btn btn--favourite"
+                shape="circle"
+                icon={<AiFillHeart />}
+                size="large"
+              />
             </Space>
           </div>
 
@@ -33,11 +38,16 @@ const TrendingHits = () => {
             <h1 className="trending-song__title">Perfect</h1>
             <h3 className="trending-song__artist">Ed Sheeran</h3>
             <Space>
-              <Button type="primary" shape="round">
+              <Button type="primary" shape="round" size="large">
                 {" "}
                 Listen Now{" "}
               </Button>
-              <Button type="ghost" shape="circle" icon={<AiFillHeart />} />
+              <Button
+                className="btn btn--favourite"
+                shape="circle"
+                icon={<AiFillHeart />}
+                size="large"
+              />
             </Space>
           </div>
 
@@ -45,11 +55,16 @@ const TrendingHits = () => {
             <h1 className="trending-song__title">SunFlower</h1>
             <h3 className="trending-song__artist">Post Malone</h3>
             <Space>
-              <Button type="primary" shape="round">
+              <Button type="primary" shape="round" size="large">
                 {" "}
                 Listen Now{" "}
               </Button>
-              <Button type="ghost" shape="circle" icon={<AiFillHeart />} />
+              <Button
+                className="btn btn--favourite"
+                shape="circle"
+                icon={<AiFillHeart />}
+                size="large"
+              />
             </Space>
           </div>
         </Carousel>

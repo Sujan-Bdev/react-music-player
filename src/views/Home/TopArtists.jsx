@@ -6,7 +6,7 @@ const TopArtists = () => {
   return (
     <div className="home-top-artists">
       <div className="charts__title">
-        Top Artists
+        <h3 className="charts__title--main">Top Artists</h3>
         <Button size="small" className="btn--list">
           see all
         </Button>
@@ -16,7 +16,7 @@ const TopArtists = () => {
         <div className="artists">
           {artists.map((artist) => (
             <div className="artist" key={artist.id}>
-              <img src={artist.image} alt="artist" className = "artist__img" />
+              <img src={artist.image} alt="artist" className="artist__img" />
               <p className="artist__name">{artist.name}</p>
             </div>
           ))}

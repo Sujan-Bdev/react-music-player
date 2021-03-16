@@ -1,0 +1,27 @@
+.btn{
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.big{
+    padding: 1.2rem 2.5rem;
+    span{
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+// Override
+.ant-btn {
+  box-shadow: none;
+}
+.ant-btn:hover,
+.ant-btn:focus {
+  border-color: $primary;
+}
+

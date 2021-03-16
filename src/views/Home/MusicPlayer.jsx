@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Card } from "antd";
+import { Slider, Button, Card } from "antd";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious, BiShuffle } from "react-icons/bi";
 import { BsArrowRepeat, BsCollectionPlayFill } from "react-icons/bs";
@@ -22,10 +22,14 @@ const MusicPlayer = () => {
             alt="song-cover"
           />
           <h3 className="song-card__title">Bad Guy</h3>
-          <p className = "song-card__artist"> Billie Eilish </p>
+          <p className="song-card__artist"> Billie Eilish </p>
         </div>
       </div>
-
+      <div className="slider-wrapper">
+        <span class="time-stamp">2:35</span>
+        <Slider defaultValue={30} />
+        <span class="time-stamp">1:02</span>
+      </div>
       <div className="player__controls">
         <Button
           type="ghost"

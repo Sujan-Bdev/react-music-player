@@ -89,7 +89,7 @@ function chillHop() {
 export const artists = [
   {
     id: uuidv4(),
-    name: "Travis scot",
+    name: "Travis scott",
     image:
       "https://chillhop.com/wp-content/uploads/2021/02/168a37665f18f73c43e333260619ca28a150dbb0-1024x1024.jpg",
   },

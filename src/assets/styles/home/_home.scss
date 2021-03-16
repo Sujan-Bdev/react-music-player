@@ -14,6 +14,7 @@
 .home__trending--title {
   font-size: 1.8rem;
   color: $text;
+  
 }
 
 .trending-song {
@@ -34,6 +35,16 @@
     color: $text;
     margin-bottom: 2rem;
   }
+
+  .btn--favourite{
+    padding: 1rem;
+    svg{
+      path{
+        fill: $primary;
+      }
+    }
+  }
+
 }
 
 .library {
@@ -57,13 +68,19 @@
   .genres__list {
     display: flex;
     // align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding: 5rem 0;
 
     @media only screen and(min-width: 768px) and (max-width: 992px) {
       flex-direction: column;
+     
+
+      .genres__item {
+        flex: 1;
+      }
     }
-    & > div {
+    .genres__item {
       margin: 1rem;
       color: $gray-dark;
       font-weight: 500;
@@ -71,16 +88,21 @@
       border-radius: 1rem;
       padding: 1.5rem 1rem;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    div:nth-child(3n + 0) {
+    div:nth-child(odd) {
       flex: 2;
-      background-color: #d9e7f3;
+      background-color: #caf7e3;
     }
 
-    div:nth-child(3n + 1) {
-      flex: 1;
-      background-color: #fffaf1;
+    div:nth-child(even) {
+      flex: 1 1 10rem;
+      background-color: #f6dfeb;
+      text-align: center;
+      
     }
   }
 }
@@ -89,6 +111,7 @@
   background-color: $white;
   padding: 1rem;
   border-radius: 1rem;
+  box-shadow: 0 1rem 4rem rgba($black, 0.3);
 
   .artists {
     display: flex;
@@ -111,10 +134,10 @@
 
     &__name {
       display: block;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: $gray;
       text-align: center;
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 }
@@ -122,8 +145,9 @@
 .home-top-charts {
   height: 100%;
   background-color: $white;
-  padding: 0 1rem;
+  padding: 1rem;
   border-radius: 1rem;
+  box-shadow: 0 1rem 4rem rgba($black, 0.3);
 
   .top-charts__list {
     // height: 30rem;
@@ -166,14 +190,14 @@
       & > h3 {
         margin: 0;
         padding: 0;
-        // font-size: 1.6rem;
-        color: $gray-dark;
+        color: $text;
+        font-weight: 600;
       }
       p {
         margin: 0;
         padding: 0;
         font-size: 1.4rem;
-        color: $gray;
+        color: $text-secondary;
         font-weight: 500;
       }
     }
@@ -205,11 +229,14 @@
   border-radius: 1rem;
   height: 100%;
 
-  @media only screen and (max-width: 993px) {
-    height: 50rem;
-  }
+  box-shadow: 0 1rem 4rem rgba($black, 0.3);
+
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 993px) {
+    height: 50rem;
+    margin-top: 2rem;
+  }
 
   .player__title {
     color: $white;
@@ -285,6 +312,25 @@
       }
     }
   }
+
+  .slider-wrapper {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+    .time-stamp {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 1rem;
+    }
+
+    .ant-slider {
+      width: 100%;
+    }
+  }
 }
 
 // ANT SLICK ARROW OVERRIDE
@@ -292,12 +338,12 @@
 .ant-carousel .slick-prev {
   left: auto;
   right: 1px;
-  top: 132px;
+  top: 190px;
   z-index: 20;
 }
 .ant-carousel .slick-next {
   right: 1px;
-  top: 145px;
+  top: 205px;
 }
 
 .ant-carousel-vertical .slick-dots {
@@ -305,7 +351,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: $gray;
+    background-color: #D6D6E6;
 
     &.slick-active {
       width: 6px;
@@ -316,11 +362,11 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: $gray;
+      background-color: #D6D6E6;
     }
 
     &.slick-active button {
-      background-color: $black;
+      background-color: $gray-dark;
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -331,6 +377,6 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: $gray;
+    background-color: #D6D6E6;
   }
 }
