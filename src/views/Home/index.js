@@ -37,6 +37,10 @@ const Index = () => {
     }
   };
 
+  // useEffect(()=> {
+  //   setCurrentSong(songsList[0])
+  // },[])
+
   useEffect(() => {
     setCurrentSong(topSongs[trackIndex]);
   }, [trackIndex]);

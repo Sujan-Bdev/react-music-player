@@ -1,42 +1,47 @@
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Slider, Button } from "antd";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious, BiShuffle } from "react-icons/bi";
 import { BsArrowRepeat, BsCollectionPlayFill } from "react-icons/bs";
 
-
-const MusicPlayer = ({currentSong, handleNext, handlePrev}) => {
+const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
   const audio = useRef();
 
   const toggle = () => {
-    if(audio.current.paused){
-      audio.current.play()
-    } else{
-      audio.current.pause()
-    }
-  }
+    audio.current.paused ? audio.current.play() : audio.current.pause();
+  };
 
-//  useEffect(() => {
-//    audio.current.play()
-//  },[])
+ 
+  const secondsToMinutes = (seconds) =>
+    Math.floor(seconds / 60) + ":" + ("0" + Math.floor(seconds % 60)).slice(-2);
+
+  const handleProgress = (value) => {
+    console.log(value);
+
+    const seekTime = (value*duration)/100;
+
+    audio.current.currentTime =  seekTime;
+    
+  };
+ 
 
   useEffect(() => {
-    setIsPlaying(true)
-    audio.current.play()
-  }, [currentSong])
-
-
-
+    setIsPlaying(true);
+    audio.current.play();
+  }, [currentSong]);
 
   return (
     <div className="home-music-player">
       <audio
         ref={audio}
         src={currentSong.audio}
-        preload = "true"
-        
-        
+        preload="true"
+        onEnded={handleNext}
+        onCanPlay={(e) => setDuration(e.target.duration)}
+        onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
       />
       <div className="player__title">
         <h3 className="player__title--main">Player</h3>
@@ -50,13 +55,19 @@ const MusicPlayer = ({currentSong, handleNext, handlePrev}) => {
             alt="song-cover"
           />
           <h3 className="song-card__title">{currentSong.name}</h3>
-          <p className="song-card__artist"> {currentSong.artist.map(singer => singer).join(",")} </p>
+          <p className="song-card__artist">
+            {" "}
+            {currentSong.artist.map((singer) => singer).join(",")}{" "}
+          </p>
         </div>
       </div>
       <div className="slider-wrapper">
-        <span class="time-stamp">2:35</span>
-        <Slider defaultValue={30} />
-        <span class="time-stamp">1:02</span>
+        <span className="time-stamp">{secondsToMinutes(currentTime)} </span>
+        <Slider 
+          value={duration ? (currentTime * 100) / duration : 0}
+          onChange={handleProgress}
+        />
+        <span className="time-stamp">{secondsToMinutes(duration)}</span>
       </div>
       <div className="player__controls">
         <Button
@@ -84,14 +95,17 @@ const MusicPlayer = ({currentSong, handleNext, handlePrev}) => {
           }
           size="large"
           className="player__controls-btn"
-          onClick={(e) => {setIsPlaying(!isPlaying); toggle()}}
+          onClick={(e) => {
+            setIsPlaying(!isPlaying);
+            toggle();
+          }}
         />
         <Button
           type="ghost"
           shape="circle"
           icon={<BiSkipNext className="ctrl__icon" />}
           className="player__controls-btn"
-          onClick = {handleNext}
+          onClick={handleNext}
         />
         <Button
           type="ghost"
