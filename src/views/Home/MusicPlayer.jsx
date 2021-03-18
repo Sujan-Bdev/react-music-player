@@ -17,9 +17,9 @@ const MusicPlayer = ({currentSong, handleNext, handlePrev}) => {
     }
   }
 
- useEffect(() => {
-   audio.current.play()
- },[])
+//  useEffect(() => {
+//    audio.current.play()
+//  },[])
 
   useEffect(() => {
     setIsPlaying(true)

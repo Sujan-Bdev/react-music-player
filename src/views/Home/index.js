@@ -10,6 +10,7 @@ import ChillHop from "data";
 
 const songsList = ChillHop();
 const topSongs = songsList.slice(0, 4);
+const trendingSongs = songsList.slice(1,4);
 
 const Index = () => {
   const [trackIndex, setTrackIndex] = useState(0);
@@ -42,7 +43,7 @@ const Index = () => {
 
   return (
     <div className="home">
-      <TrendingHits />
+      <TrendingHits trendingSongs = {trendingSongs} currentSong = {currentSong}  />
       <div className="home__library">
         <div className="container">
           <Row justify="center" className="library" gutter={[24, 32]}>
