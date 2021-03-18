@@ -26,7 +26,16 @@ const Index = () => {
     setCollapsed(!collapsed);
   };
   return (
-    <Sider className="sidebar" collapsible collapsed={collapsed} trigger={null}>
+    <Sider
+      className="sidebar"
+      collapsible
+      collapsed={collapsed}
+      trigger={null}
+      breakpoint="md"
+      onBreakpoint = {broken => {
+        setCollapsed(broken)
+      }}
+    >
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>

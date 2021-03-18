@@ -3,8 +3,10 @@
 
   overflow-y: auto;
   overflow-x: hidden;
+
   position: fixed;
-  height: 100vh;
+  top:0;
+  bottom: 0;
 
   .logo {
     width: 8rem;

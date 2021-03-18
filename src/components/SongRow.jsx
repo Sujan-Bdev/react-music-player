@@ -2,9 +2,29 @@ import React from "react";
 import { AiFillPlayCircle, AiFillPlusSquare } from "react-icons/ai";
 
 const SongRow = ({ song }) => {
+  const columns = [
+    {
+      title: 'rank',
+      dataIndex: 'rank',
+      key: "rank"
+    },
+
+    {
+      title: 'Title',
+      key: 'title',
+      render: (text,record) => {
+
+      }
+    }
+  ]
+  
   return (
-    <div className="song-row">
-      <div className="song-row__rank">
+
+
+
+
+    <div className="song">
+      {/* <div className="song-row__rank">
         <h4>{song.rank}</h4>
       </div>
       <img src={song.cover} alt={song.name} className="song-row__image" />
@@ -16,7 +36,10 @@ const SongRow = ({ song }) => {
       <div className = "song-row__icons">
         <AiFillPlayCircle className = "song-row__icons--play"/>
         <AiFillPlusSquare className = "song-row__icons--add"/>
-      </div>
+      </div> */}
+
+
+
     </div>
   );
 };
