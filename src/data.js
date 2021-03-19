@@ -3,56 +3,56 @@ import { v4 as uuidv4 } from "uuid";
 function chillHop() {
   return [
     {
-      name: "Beaver Creek",
+      name: "Diamonds",
       cover:
         "https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg",
-      artist: ["Aso", "Middle School", "Aviino"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
-      color: ["#205950", "#2ab3bf"],
+      artist: ["Rihana"],
+      audio:
+        "http://cache.waptrick.one/ringtones_new/fullmp3best/Rihanna_Diamonds.mp3",
+
+      //  "https://mp3.chillhop.com/serve.php/?mp3=10075",
       id: uuidv4(),
-      length: "3.45",
+      length: "3:45",
       rank: 1,
-      active: true,
     },
     {
-      name: "Daylight",
+      name: "Beautiful Mistakes",
       cover:
         "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
-      artist: ["Aiguille"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
-      color: ["#EF8EA9", "#ab417f"],
+      artist: ["Maroon 5"],
+      audio:
+        "http://cache.waptrick.one/ringtones_new/fullmp3best/Maroon_5_feat_Megan_Thee_Stallion_Beautiful_Mistakes.mp3",
+      //  "https://mp3.chillhop.com/serve.php/?mp3=9272",
       id: uuidv4(),
       rank: 2,
-      length: "3.45",
-
-      active: false,
+      length: "3:47",
     },
     {
-      name: "Keep Going",
+      name: "I am the One",
       cover:
         "https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg",
-      artist: ["Swørn"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
-      color: ["#CD607D", "#c94043"],
+      artist: ["DJ Khaled", "Justin Bieber"],
+      audio:
+        "http://cache.waptrick.one/ringtones_new/fullmp3best/DJ_Khaled_feat_Justin_Bieber_feat_Quavo_feat_Lil_Wayne_Im_The_One.mp3",
+      //  "https://mp3.chillhop.com/serve.php/?mp3=9222",
       id: uuidv4(),
-      length: "3.45",
+      length: "3:45",
 
       rank: 3,
-
-      active: false,
     },
     {
-      name: "Nightfall",
-      cover: "https://chillhop.com/wp-content/uploads/2020/06/Chillhop-Essentials-Summer-2020-tag-300x300.jpg",
-      artist: ["Aiguille"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
+      name: "Sunflower",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/06/Chillhop-Essentials-Summer-2020-tag-300x300.jpg",
+      artist: ["Post Malone"],
+      audio:
+        "http://cache.waptrick.one/ringtones_new/fullmp3best/Post_Malone_feat_Swae_Lee_Sunflower.mp3",
+      // "https://mp3.chillhop.com/serve.php/?mp3=9148",
       color: ["#EF8EA9", "#ab417f"],
       id: uuidv4(),
-      length: "3.45",
+      length: "2:38",
 
       rank: 4,
-
-      active: false,
     },
     {
       name: "Reflection",
