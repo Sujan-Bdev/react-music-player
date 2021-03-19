@@ -8,25 +8,34 @@ const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [isRepeat, setIsRepeat] = useState(false);
+
   const audio = useRef();
 
   const toggle = () => {
     audio.current.paused ? audio.current.play() : audio.current.pause();
   };
 
- 
   const secondsToMinutes = (seconds) =>
     Math.floor(seconds / 60) + ":" + ("0" + Math.floor(seconds % 60)).slice(-2);
 
   const handleProgress = (value) => {
-    console.log(value);
+    const seekTime = (value * duration) / 100;
+    audio.current.currentTime = seekTime;
+  };
 
-    const seekTime = (value*duration)/100;
+  const handleRepeat = () => {
+    setIsRepeat(!isRepeat);
+  };
 
-    audio.current.currentTime =  seekTime;
+  const playAgain = () => {
+    isRepeat ? (audio.current.loop = true) : (audio.current.loop = false);
     
   };
- 
+
+  useEffect(() => {
+    playAgain();
+  }, [isRepeat])
 
   useEffect(() => {
     setIsPlaying(true);
@@ -39,7 +48,7 @@ const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
         ref={audio}
         src={currentSong.audio}
         preload="true"
-        onEnded={handleNext}
+        onEnded={isRepeat ? playAgain : handleNext}
         onCanPlay={(e) => setDuration(e.target.duration)}
         onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
       />
@@ -63,7 +72,7 @@ const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
       </div>
       <div className="slider-wrapper">
         <span className="time-stamp">{secondsToMinutes(currentTime)} </span>
-        <Slider 
+        <Slider
           value={duration ? (currentTime * 100) / duration : 0}
           onChange={handleProgress}
         />
@@ -74,7 +83,12 @@ const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
           type="ghost"
           shape="circle"
           icon={<BsArrowRepeat className="ctrl__icon" />}
-          className="player__controls-btn"
+          className={
+            isRepeat
+              ? "player__controls-btn btn--active"
+              : "player__controls-btn"
+          }
+          onClick={handleRepeat}
         />
         <Button
           type="ghost"
