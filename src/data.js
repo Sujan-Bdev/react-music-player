@@ -48,13 +48,12 @@ function chillHop() {
         "https://chillhop.com/wp-content/uploads/2020/06/Chillhop-Essentials-Summer-2020-tag-300x300.jpg",
       artist: ["Aiguille"],
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
+
       color: ["#EF8EA9", "#ab417f"],
       id: uuidv4(),
-      length: "3.45",
+      length: "2:38",
 
       rank: 4,
-
-      active: false,
     },
     {
       name: "Reflection",
