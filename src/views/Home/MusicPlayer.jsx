@@ -9,6 +9,7 @@ const MusicPlayer = ({ currentSong, handleNext, handlePrev }) => {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [isRepeat, setIsRepeat] = useState(false);
+  const [isShuffle, setisShuffle] = useState(false);
 
   const audio = useRef();
 
